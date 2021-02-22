@@ -1,0 +1,16 @@
+write !,"Running init.cos as ",$username,!
+
+set srcDir = $system.Util.GetEnviron("SRC_DIR")
+
+ // Run installer.
+do $system.OBJ.Load(srcDir _ "/Installer.cls","ck")
+set st = ##class(App.Installer).setup(, 3)
+if 'st { write "Error installing setup",!  do $system.OBJ.DisplayError(st) }
+
+zn "%SYS"
+
+ // Clean up for a fresh restart.
+do INT^JRNSTOP
+kill ^%SYS("JOURNAL")
+kill ^SYS("NODE")
+halt

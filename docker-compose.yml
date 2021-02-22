@@ -1,0 +1,10 @@
+version: "3"
+services:
+  iris4health:
+    build:
+      context: .
+    container_name: iris4health
+    ports:
+      - "52779:52773"
+    volumes:
+      - ./ext:/ext
