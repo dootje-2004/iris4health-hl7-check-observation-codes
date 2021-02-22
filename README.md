@@ -8,8 +8,8 @@ We presume basic knowledge of IRIS interoperability (e.g. the training *Developi
 
 ## Installation
 
-If you want to run this example in a Docker environment, clone this repo and run `docker-compose up -d`. It uses the IRIS4Health Community Edition, so there is no need for a license key.
-Otherwise, have an IRIS4Health instance running and create an interoperability-enabled namespace in it.
+If you want to run this example in a Docker environment, clone this repo and run `docker-compose up -d`. It uses the IRIS4Health Community Edition, so there is no need for a license key. An interop-enabled namespace named *HL7* is created when the container starts.
+If you are not using Docker, have an IRIS4Health instance running and create an interoperability-enabled namespace in it.
 
 In either case, import the file *RepeatingField.xml* into the interoperability namespace and compile it.
 You can use the Studio IDE or the Management Portal (System Explorer > Classes > Import).
